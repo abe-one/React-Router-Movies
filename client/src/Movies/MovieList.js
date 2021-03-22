@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import MovieCard from "./MovieCard";
 
 export default function MovieList(props) {
   return (
@@ -19,14 +20,21 @@ function MovieDetails(props) {
   };
 
   return (
-    <div className="movie-card" onClick={routeToMovie}>
-      <h2>{title}</h2>
-      <div className="movie-director">
-        Director: <em>{director}</em>
-      </div>
-      <div className="movie-metascore">
-        Metascore: <strong>{metascore}</strong>
-      </div>
-    </div>
+    <MovieCard
+      title={title}
+      director={director}
+      metascore={metascore}
+      id={id}
+      routeOnClick={routeToMovie}
+    />
+    // <div className="movie-card" onClick={routeToMovie}>
+    //   <h2>{title}</h2>
+    //   <div className="movie-director">
+    //     Director: <em>{director}</em>
+    //   </div>
+    //   <div className="movie-metascore">
+    //     Metascore: <strong>{metascore}</strong>
+    //   </div>
+    // </div>
   );
 }

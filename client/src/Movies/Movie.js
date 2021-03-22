@@ -32,7 +32,7 @@ export default function Movie(props) {
     return <div>Loading movie information...</div>;
   }
 
-  // const { title, director, metascore, stars } = movie;
+  const { title, director, metascore, id, stars } = movie;
 
   // return (
   //   <div className="save-wrapper">
@@ -58,10 +58,12 @@ export default function Movie(props) {
 
   return (
     <MovieCard
-      title={movie.title}
-      director={movie.director}
-      metascore={movie.metascore}
-      stars={movie.stars}
+      title={title}
+      director={director}
+      metascore={metascore}
+      stars={stars}
+      id={id}
+      routeOnClick={routeToHome}
     />
   );
 }
