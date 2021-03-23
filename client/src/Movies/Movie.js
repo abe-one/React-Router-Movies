@@ -64,6 +64,7 @@ export default function Movie(props) {
       stars={stars}
       id={id}
       routeOnClick={routeToHome}
+      addToSavedList={props.addToSavedList}
     />
   );
 }

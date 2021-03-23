@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory, useRouteMatch } from "react-router-dom";
 
 export default function MovieCard({
   title,
@@ -8,6 +7,9 @@ export default function MovieCard({
   stars,
   id,
   routeOnClick,
+  saved,
+  setSaved,
+  addToSavedList,
 }) {
   return (
     <div className="save-wrapper">
@@ -28,7 +30,9 @@ export default function MovieCard({
             </div>
           ))}
       </div>
-      <div className="save-button">Save</div>
+      <div className="save-button" onClick={() => addToSavedList(id)}>
+        Save
+      </div>
     </div>
   );
 }

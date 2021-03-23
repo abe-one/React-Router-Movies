@@ -11,6 +11,7 @@ export default function SavedList(props) {
       {props.list.map((movie) => (
         <span className="saved-movie">{movie.title}</span>
       ))}
+      {/* {props.list[0]} */}
       <div className="home-button" onClick={routeToHome}>
         Home
       </div>

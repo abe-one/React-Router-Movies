@@ -6,7 +6,11 @@ export default function MovieList(props) {
   return (
     <div className="movie-list">
       {props.movies.map((movie) => (
-        <MovieDetails key={movie.id} movie={movie} />
+        <MovieDetails
+          key={movie.id}
+          movie={movie}
+          addToSavedList={props.addToSavedList}
+        />
       ))}
     </div>
   );
@@ -14,6 +18,7 @@ export default function MovieList(props) {
 
 function MovieDetails(props) {
   const { title, director, metascore, id } = props.movie;
+
   const history = useHistory();
   const routeToMovie = () => {
     history.push(`movies/${id}`);
@@ -26,6 +31,7 @@ function MovieDetails(props) {
       metascore={metascore}
       id={id}
       routeOnClick={routeToMovie}
+      addToSavedList={props.addToSavedList}
     />
     // <div className="movie-card" onClick={routeToMovie}>
     //   <h2>{title}</h2>
